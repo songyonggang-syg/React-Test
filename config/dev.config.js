@@ -28,7 +28,7 @@ const config = WebpackMerge.merge(baseConfig, {
         host: "0.0.0.0",
         stats: 'errors-only',
         hotOnly: true,
-        port: 2001,
+        port: 2000,
         hot: true,
         overlay: {
             warnings: true,

@@ -3,7 +3,7 @@ class Loading extends React.Component {
     render() {
         return (
             <div>
-                Loading........
+                Loading........000000000000000
             </div>
         )
     }

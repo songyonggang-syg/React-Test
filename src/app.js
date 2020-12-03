@@ -19,14 +19,15 @@ class App extends React.Component{
                                 if (item.children !== undefined && item.children.length !== 0) {
                                     return (
                                         <Fragment key={index}>
-                                            <Route path={item.path} component={item.component} exact={item.exact || false}/>
+                                            <Route path={item.path} exact={item.exact || false} render={()=>{
+                                                return <item.component/>
+                                            }}/>
                                             <Switch>
                                                 {
                                                     item.children.map((items,indexs)=>{
-                                                        const Components =  items.component
                                                         return (
                                                             <Route key={indexs} path={items.path} exact={items.exact || false} render={()=>{
-                                                                return <Components/>
+                                                                return <items.component/>
                                                             }}/>
                                                         )
                                                     })
@@ -35,10 +36,9 @@ class App extends React.Component{
                                         </Fragment>
                                     )
                                 } else {
-                                    const Components =  item.component
                                     return (
                                         <Route key={index}  path={item.path} exact={item.exact || false} render={()=>{
-                                            return <Components/>
+                                            return <item.component/>
                                         }}/>
                                     )
                                 }
